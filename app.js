@@ -38,6 +38,15 @@ console.log(listEndpoints(app));
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 
+const admin = require("firebase-admin");
+
+const serviceAccount = JSON.parse(process.env.GOOGLE_CREDENTIALS);
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+});
+
+
 // Example route
 app.get("/", async (req, res, next) => {
   res.send({ message: "Awesome it works 🐻" });

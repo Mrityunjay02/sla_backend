@@ -40,7 +40,7 @@ console.log(listEndpoints(app));
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 
-const admin = require("firebase-admin");
+
 
 const serviceAccount = JSON.parse(process.env.GOOGLE_CREDENTIALS);
 

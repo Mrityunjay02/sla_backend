@@ -57,17 +57,18 @@ app.options("*", cors());
 app.use(
   cors({
     origin: [
-      "https://jewellery-app-dashboard.vercel.app",
       "http://localhost:3000",
       "http://localhost:5173",
       "https://srilaxmialankar.com",
-      "https://dashboard.srilaxmialankar.com", // <-- removed trailing slash here
+      "https://dashboard.srilaxmialankar.com",
+      "https://sla-pro.vercel.app"  // ✅ Yeh Vercel ka frontend hai
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
   })
 );
+
 
 // app.use('/api', require('./routes/api.route'));
 app.use("/auth", UserRoutes);

@@ -30,6 +30,15 @@ const WishlistRoutes = require("./routes/Wishlist.routes");
 const AppBannerRoutes = require("./routes/AppBanner.routes");
 require("dotenv").config();
 
+const admin = require("firebase-admin");
+
+const serviceAccount = JSON.parse(process.env.GOOGLE_CREDENTIALS);
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+});
+
+
 const app = express();
 app.use(express.json());
 

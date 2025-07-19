@@ -1,10 +1,10 @@
 const admin = require("firebase-admin");
-const serviceAccount = require("../config/service.json");
 
+// ✅ Use environment variable instead of file
+const serviceAccount = JSON.parse(process.env.GOOGLE_CREDENTIALS);
 
-  admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount),
-  });
-
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+});
 
 module.exports = admin;

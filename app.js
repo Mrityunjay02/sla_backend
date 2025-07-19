@@ -30,7 +30,7 @@ const WishlistRoutes = require("./routes/Wishlist.routes");
 const AppBannerRoutes = require("./routes/AppBanner.routes");
 require("dotenv").config();
 
-const admin = require("firebase-admin");
+
 
 const app = express();
 app.use(express.json());

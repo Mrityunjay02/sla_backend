@@ -29,6 +29,8 @@ const GoldPriceRoutes = require("./routes/Price.routes");
 const WishlistRoutes = require("./routes/Wishlist.routes");
 const AppBannerRoutes = require("./routes/AppBanner.routes");
 require("dotenv").config();
+const admin = require("./config/firebaseAdmin");
+
 
 
 
